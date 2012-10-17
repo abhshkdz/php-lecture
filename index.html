@@ -17,7 +17,6 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/beige.css">
-    <link rel="stylesheet" href="css/sdslabs.css">
     <!-- <link rel="stylesheet" href="css/print/pdf.css"> -->
 
     <!-- For syntax highlighting -->
@@ -31,6 +30,7 @@
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="css/sdslabs.css">
   </head>
   
   <body>
@@ -424,182 +424,234 @@
                     <li class="fragment">Remember the HTML assignment ? It had a form !</li>
                 </ul>
             </div>
-        </section>
-        <section>
-          <pre><code contenteditable>&lt;form>
+          </section>
+          <section>
+            <pre><code contenteditable>&lt;form>
   First: &lt;input type="text" name="Firstname" maxlength="3">
   Last: &lt;input type="text" name="Lastname" maxlength="5">
   &lt;input type="submit" value="SUBMIT">
-&lt;/form>
-          </code></pre><br>
-          <h3 class="fragment custom-gray">form has 2 important attributes <br></h3>
-          <h3 class="fragment"><span class="custom-red">Action</span>: destination of form data <br></h3>
-          <h3 class="fragment"><span class="custom-red">Method</span>: method used to send data <br></h3>
-          <h3 class="fragment custom-gray">HTTP request methods: GET & POST</h3>
+&lt;/form></code></pre><br>
+            <h3 class="fragment custom-gray">form has 2 important attributes <br></h3>
+            <h3 class="fragment"><span class="custom-red">Action</span>: destination of form data <br></h3>
+            <h3 class="fragment"><span class="custom-red">Method</span>: method used to send data <br></h3>
+            <h3 class="fragment custom-gray">HTTP request methods: GET & POST</h3>
+          </section>
+          <section>
+            <h2>GET</h2>
+            <div>
+                <ul>
+                    <li>In &nbsp;GET method , form data is sent explicitly and is visible in the URL .</li>
+                </ul>
+                <img src="img/qYVen.png">
+            </div>
+            <div style="text-align: left;">
+                <ul>
+                    <li>Limit on the amount of data sent in single GET request.</li>
+                </ul>
+            </div>
+          </section>
+          <section>
+            <h2>POST</h2>
+            <div>This is more secure than a GET request</div>
+            <div>
+                <ul>
+                    <li>Not visible in the URL</li>
+                    <li>Used to send sensitive data</li>
+                    <li>File uploading</li>
+                    <li>No size limit</li>
+                </ul>
+                <br>
+            </div>
+            <div>
+                <br>
+            </div>
+            <div>Login data of a website is sent by POST method.</div>
+            <div>Imagine if Gmail login was based upon GET !</div>
+          </section>
+          <section>
+            <h2>FORM revisited</h2>
+            <div>So appending action and method attributes&nbsp;</div>
+            <div>to our form ,</div>
+            <div>
+                <br>
+            </div>
+            <div>
+                <img src="img/HwXJD.jpg">
+                <br>
+            </div>
+            <div>Keep an eye on 'name' attribute.</div>
+            <div>
+                <br>
+            </div>
+            <div>The client side work is done.</div>
+            <div>Now , the server side script handling form data.</div>
+          </section>
         </section>
+
         <section>
-          <h2>GET</h2>
-          <div>
-              <ul>
-                  <li>In &nbsp;GET method , form data is sent explicitly and is visible in the URL .</li>
-              </ul>
-              <img src="img/qYVen.png">
-          </div>
-          <div style="text-align: left;">
-              <ul>
-                  <li>Limit on the amount of data sent in single GET request.</li>
-              </ul>
-          </div>
+          <section>
+              <h2>FORM.PHP</h2>
+              <div>Data sent to PHP script through GET/POST is</div>
+              <div>accessed through &nbsp;associative arrays,</div>
+              <div><span class="custom-blue">$_GET</span> and <span class="custom-blue">$_POST</span> respectively .&nbsp;</div>
+              <div>
+                  <br>
+              </div>
+              <div>
+                <h3><span class="custom-red">Name</span> attribute used as index of array element</h3>
+                <h3><span class="custom-red">$_REQUEST</span> used for both GET and POST</h3>
+                <p>
+                  <img src="img/AERSN.png">
+                  <br>
+                </p>
+            </div>
+          </section>
+          <section>
+              <h2>FORM.php&nbsp;</h2>
+              <div>
+                  <img src="img/xSIr1.png">
+                  <br>
+              </div>
+              <div>
+                  <br>
+              </div>
+          </section>
         </section>
-    <section>
-        <h2>POST</h2>
-        <div>This is more secure than a GET request</div>
-        <div>
-            <ul>
-                <li>Not visible in the URL</li>
-                <li>Used to send sensitive data</li>
-                <li>File uploading</li>
-                <li>No size limit</li>
-            </ul>
-            <br>
-        </div>
-        <div>
-            <br>
-        </div>
-        <div>Login data of a website is sent by POST method.</div>
-        <div>Imagine if Gmail login was based upon GET !</div>
-    </section>
-    <section>
-        <h2>FORM revisited</h2>
-        <div>So appending action and method attributes&nbsp;</div>
-        <div>to our form ,</div>
-        <div>
-            <br>
-        </div>
-        <div>
-            <img src="img/HwXJD.jpg">
-            <br>
-        </div>
-        <div>Keep an eye on 'name' attribute.</div>
-        <div>
-            <br>
-        </div>
-        <div>The client side work is done.</div>
-        <div>Now , the server side script handling form data.</div>
-    </section>
-</section>
-<section>
-    <section>
-        <h2>FORM.PHP</h2>
-        <div>Data sent to PHP script through GET/POST is</div>
-        <div>accessed through &nbsp;associative arrays,</div>
-        <div><span class="custom-blue">$_GET</span> and <span class="custom-blue">$_POST</span> respectively .&nbsp;</div>
-        <div>
-            <br>
-        </div>
-        <div>
-            <h3><span class="custom-red">Name</span> attribute used as index of array element</h3>
-            <h3><span class="custom-red">$_REQUEST</span> used for both GET and POST</h3>
-            <p>
-            <img src="img/AERSN.png">
-            <br>
-        </p>
-    </div>
-</section>
-<section>
-    <h2>FORM.php&nbsp;</h2>
-    <div>
-        <img src="img/xSIr1.png">
-        <br>
-    </div>
-    <div>
-        <br>
-    </div>
-</section>
-</section>
-    <section>
-      <h2>links</h2>
-      <h3><a href="http://www.php.net/manual/en/">php documentation</a></h3>
-      <h3><a href="http://www.tizag.com/phpT/">Tizag</a></h3>
-      <h3><a href="http://db.tt/IUc0r6q">Dropbox</a></h3>
-    </section>
 
-    <section>
-      <h2>MySQL</h2>  
-      <div>
-        <ul>
-          <li class="fragment">An open source relational database system</li>
-          <li class="fragment">Stores data in form of tables</li>
-          <li class="fragment">Use the data stored for functionality of your webpage</li>
-          <li class="fragment">It is included in XAMPP</li>
-        </ul>
-      </div>
-    </section>
+        <section>
+          <section>
+            <h2>MySQL</h2>  
+            <div>
+              <ul>
+                <li class="fragment">An open source relational database system</li>
+                <li class="fragment">Stores data in form of tables</li>
+                <li class="fragment">Use the data stored for functionality of your webpage</li>
+                <li class="fragment">It is included in XAMPP</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <img src="img/7.png" alt="">
+          </section>
+        </section>
 
-    <section>
-      <h2>Using MySQL in PHP file</h2>
-      <ul>
-        <li class="fragment">Connect to the database</li>
-        <li class="fragment">Select a databasae</li>
-        <li class="fragment">Select any data from any table or insert into any table</li>
-      </ul>
-    </section>
+        <section>
+          <h2>Using MySQL in PHP file</h2>
+          <ul>
+            <li class="fragment">Connect to the database</li>
+            <li class="fragment">Select a databasae</li>
+            <li class="fragment">Select any data from any table or insert into any table</li>
+            <li class="fragment">Close the connection</li>
+          </ul>
+        </section>
     
-    <section>
-      <section>
-      <h2>Connecting to database</h2>
-      <div>mysql_connect command</div>
-      <div>Needs following parameters</div>
-      <ul>
-        <li class="fragment">server name</li>
-        <li class="fragment">mysql username</li>
-        <li class="fragment">mysql password</li>
-      </ul>
-      <div></section>
-      <section>
-        <pre class="fragment"><code>&lt;?php
-    $link=mysql_connect('server','mysql_user','mysql_username');
-    if($link){
-  echo &quot;Connection made!&quot;
-  }
+        <section>
+          <section>
+            <h2>Connecting to database</h2>
+            <div class="custom-blue large fragment">mysql_connect()</div>
+            <h3 class="fragment custom-gray">Parameters:</h3>
+            <ul class="fragment">
+              <li>Server</li>
+              <li>Username</li>
+              <li>Password</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code>&lt;?php
+    $link=mysql_connect('server','mysql_user','mysql_password');
+    if($link)
+        echo &quot;Connection made!&quot;;
     else
-      die( &quot;Connection attempt unsuccessful!&quot;);
+        die (&quot;Connection attempt unsuccessful!&quot;);
 ?&gt;</code></pre>
-      </div>
-    </section>
-    </section>
+          </section>
+        </section>
       
-    <section>
-      <h2>Selecting a db</h2>
-      <div>
-<pre class="fragment"><code>&lt;?php
-    $link=mysql_connect('server','mysql_user','mysql_username');
-    if($link){
-  echo &quot;Connection made!&quot;
-  }
+        <section>
+          <section>
+            <h2>Selecting a database</h2>
+            <div class="custom-blue large fragment">mysql_select_db()</div>
+            <h3 class="fragment custom-gray">Parameters:</h3>
+            <ul class="fragment">
+              <li>Database name</li>
+              <li>Link identifier</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code>&lt;?php
+    $link=mysql_connect('server','mysql_user','mysql_password');
+    if($link)
+        echo &quot;Connection made!&quot;;
     else
-      die( &quot;Connection attempt unsuccessful!&quot;);
-      $db_selected=mysql_select_db('test', $link);
+        die (&quot;Connection attempt unsuccessful!&quot;);
+    $db_selected=mysql_select_db('test', $link);
 ?&gt;</code></pre>
-      </div>
-    </section>
+          </section>
+        </section>
 
-    <section>
-      <h2>Retrieve data from database</h2>
-      <div>mysql_query()</div>
-      <div>
-      <pre class="fragment"><code>&lt;?php
-    $link=mysql_connect('server','mysql_user','mysql_username');
-    if($link){
-  echo &quot;Connection made!&quot;
-  }
+        <section>
+          <section>
+            <h2>Retrieving data from database</h2>
+            <div class="custom-blue large fragment">mysql_query()</div>
+            <h3 class="fragment custom-gray">Parameters:</h3>
+            <ul class="fragment">
+              <li>Query</li>
+              <li>Link identifier</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code>&lt;?php
+    $link=mysql_connect('server','mysql_user','mysql_password');
+    if($link)
+        echo &quot;Connection made!&quot;;
     else
-      die( &quot;Connection attempt unsuccessful!&quot;);
-      $db_selected=mysql_select_db('test', $link);
-      $user=mysql_query(&quot;SELECT * FROM users&quot;)
+        die (&quot;Connection attempt unsuccessful!&quot;);
+    $db_selected=mysql_select_db('test', $link);
+    if ($db_selected)
+        $users=mysql_query(&quot;SELECT * FROM users&quot;, $link);
+    else
+        echo "Could not select database";
 ?&gt;</code></pre>
-      </div>
-    </section>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Closing database connection</h2>
+            <div class="custom-blue large fragment">mysql_close()</div>
+            <h3 class="fragment custom-gray">Parameters:</h3>
+            <ul class="fragment">
+              <li>Link identifier</li>
+            </ul>
+          </section>
+          <section>
+            <pre><code>&lt;?php
+    $link=mysql_connect('server','mysql_user','mysql_password');
+    if($link)
+        echo &quot;Connection made!&quot;;
+    else
+        die (&quot;Connection attempt unsuccessful!&quot;);
+    $db_selected=mysql_select_db('test', $link);
+    if ($db_selected)
+        $users=mysql_query(&quot;SELECT * FROM users&quot;, $link);
+    else
+        echo "Could not select database";
+    $close_connection=mysql_close($link);
+    if ($close_connection)
+        echo "Good job!";
+    else
+        echo "Something is wrong!";
+?&gt;</code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>links</h2>
+          <h3><a href="http://www.php.net/manual/en/">php documentation</a></h3>
+          <h3><a href="http://www.tizag.com/phpT/">Tizag - PHP</a></h3>
+          <h3><a href="http://www.tizag.com/mysqlTutorial/">Tizag - MySQL</a></h3>
+          <h3><a href="http://db.tt/IUc0r6q">Dropbox</a></h3>
+        </section>
 
       </div>
       
