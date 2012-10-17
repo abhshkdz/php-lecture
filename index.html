@@ -524,6 +524,83 @@
       <h3><a href="http://db.tt/IUc0r6q">Dropbox</a></h3>
     </section>
 
+    <section>
+      <h2>MySQL</h2>  
+      <div>
+        <ul>
+          <li class="fragment">An open source relational database system</li>
+          <li class="fragment">Stores data in form of tables</li>
+          <li class="fragment">Use the data stored for functionality of your webpage</li>
+          <li class="fragment">It is included in XAMPP</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Using MySQL in PHP file</h2>
+      <ul>
+        <li class="fragment">Connect to the database</li>
+        <li class="fragment">Select a databasae</li>
+        <li class="fragment">Select any data from any table or insert into any table</li>
+      </ul>
+    </section>
+    
+    <section>
+      <section>
+      <h2>Connecting to database</h2>
+      <div>mysql_connect command</div>
+      <div>Needs following parameters</div>
+      <ul>
+        <li class="fragment">server name</li>
+        <li class="fragment">mysql username</li>
+        <li class="fragment">mysql password</li>
+      </ul>
+      <div></section>
+      <section>
+        <pre class="fragment"><code>&lt;?php
+    $link=mysql_connect('server','mysql_user','mysql_username');
+    if($link){
+  echo &quot;Connection made!&quot;
+  }
+    else
+      die( &quot;Connection attempt unsuccessful!&quot;);
+?&gt;</code></pre>
+      </div>
+    </section>
+    </section>
+      
+    <section>
+      <h2>Selecting a db</h2>
+      <div>
+<pre class="fragment"><code>&lt;?php
+    $link=mysql_connect('server','mysql_user','mysql_username');
+    if($link){
+  echo &quot;Connection made!&quot;
+  }
+    else
+      die( &quot;Connection attempt unsuccessful!&quot;);
+      $db_selected=mysql_select_db('test', $link);
+?&gt;</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Retrieve data from database</h2>
+      <div>mysql_query()</div>
+      <div>
+      <pre class="fragment"><code>&lt;?php
+    $link=mysql_connect('server','mysql_user','mysql_username');
+    if($link){
+  echo &quot;Connection made!&quot;
+  }
+    else
+      die( &quot;Connection attempt unsuccessful!&quot;);
+      $db_selected=mysql_select_db('test', $link);
+      $user=mysql_query(&quot;SELECT * FROM users&quot;)
+?&gt;</code></pre>
+      </div>
+    </section>
+
       </div>
       
     </div>
